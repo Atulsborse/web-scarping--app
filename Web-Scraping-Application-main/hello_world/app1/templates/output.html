@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+<script src="https://kit.fontawesome.com/2af97755c5.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="container">
+
+<form action="result">
+ <i class="fas fa-search"></i>
+    <input type="text" name="search_box" placeholder="What are you looking for">
+    <button type="submit">Search</button>
+
+</form>
+
+
+</div>
+
+<!--main products boxes-->
+
+
+<div class="box">
+
+<div id="box1">
+        <div class="product-image" style="width:100%" >
+         {% if Product_image == 'NA' %}
+        <img src="{% static 'images/no_product_found.png' %}"  alt="">
+        {% else %}
+         <img src="{{Product_image}}" alt="">
+        {% endif %}
+        </div>
+
+        <div class="product-name">
+            {% if amazon_name == 'NA' %}
+            <p>No Product Found </p>
+            {% else %}
+            <p>{{amazon_name}}</p>
+            {% endif %}
+        </div>
+
+    <div class="product-btn">
+            <img src="{% static 'images/amazon_logo (2).png'%}"  alt="">
+            <div class="product-price">
+                <h3>{{amazon_price}}</h3>
+            </div>
+
+            <a href="{{product_link}}">
+                {% if product_link == 'NA' %}
+            <button type="submit" disabled>BUY</button>
+                {% else %}
+                <button type="submit">BUY</button>
+              {% endif %}
+            </a>
+
+        </div>
+
+
+
+
+</div>
+
+
+<div id="box2">
+
+    <div class="product-image" style="width:100%">
+        {% if flipkart_Product_image == 'NA' %}
+        <img src="{% static 'images/no_product_found.png' %}" alt="">
+        {% else %}
+    <img src="{{flipkart_Product_image}}" alt="">
+        {% endif %}
+    </div>
+    <div class="product-name">
+        {% if flipkart_Product_image == 'NA' %}
+        <p>No Product Found</p>
+        {% else %}
+        <p>{{flipkart_name}}</p>
+        {% endif %}
+    </div>
+    <div class="product-btn">
+        <img src="{% static 'images/flipkart_logo.png'%}" alt="">
+        <div class="product-price">
+            <h3>{{flipkart_price}}</h3>
+        </div>
+        <a href="{{flipkart_product_link}}">
+            {% if flipkart_Product_image == 'NA' %}
+            <button type="submit" disabled>BUY</button>
+            {% else %}
+            <button type="submit">BUY</button>
+            {% endif %}
+        </a>
+    </div>
+
+</div>
+
+
+
+<div id="box3">
+
+    <div class="product-image" style="width:100%">
+        {% if chroma_Product_image == 'NA' %}
+        <img src="{% static 'images/no_product_found.png' %}" alt="">
+        {% else %}
+    <img src="{{chroma_Product_image}}" alt="">
+        {% endif %}
+    </div>
+    <div class="product-name">
+        {% if chroma_Product_image == 'NA' %}
+        <p>No Product Found</p>
+        {% else %}
+        <p>{{chroma_name}}</p>
+        {% endif %}
+    </div>
+    <div class="product-btn">
+        <img src="{% static 'images/croma_logo.png'%}" alt="">
+        <div class="product-price">
+            <h3>{{chroma_price}}</h3>
+        </div>
+        <a href="{{chroma_product_link}}">
+            {% if chroma_Product_image == 'NA' %}
+            <button type="submit" disabled>BUY</button>
+            {% else %}
+            <button type="submit">BUY</button>
+            {% endif %}
+        </a>
+    </div>
+
+</div>
+
+
+
+<div id="box4">
+
+    <div class="product-image" style="width:100%">
+        {% if reliance_Product_image == 'NA' %}
+        <img src="{% static 'images/no_product_found.png' %}" alt="">
+        {% else %}
+    <img src="{{reliance_Product_image}}" alt="">
+        {% endif %}
+    </div>
+    <div class="product-name">
+        {% if reliance_Product_image == 'NA' %}
+        <p>No Product Found</p>
+        {% else %}
+        <p>{{reliance_name}}</p>
+        {% endif %}
+    </div>
+    <div class="product-btn">
+        <img src="{% static 'images/reliance_logo.svg'%}" alt="">
+        <div class="product-price">
+            <h3>{{reliance_price}}</h3>
+        </div>
+        <a href="{{reliance_product_link}}">
+            {% if reliance_Product_image == 'NA' %}
+            <button type="submit" disabled>BUY</button>
+            {% else %}
+            <button type="submit">BUY</button>
+            {% endif %}
+        </a>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+
+</body>
+</html>
